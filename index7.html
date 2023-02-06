@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Ex 7 Page (idk)</title>
+    </head>
+    <body>
+        <!-- this creates the "input botton" that will take the price of the item -->
+        <input type="text" id="txt-price" placeholder="Enter the price of the item"> 
+        <!-- this creates the "input botton" that will take the quantity of the items -->
+        <input type="text" id="txt-quantity" placeholder="Enter the quanity of the item">
+        <!-- this creates the regular 'calculate' button-->
+        <button id="btn-submit">Calculate</button>
+        <!--this indicates that the 'output' method/id is being called-->
+        <div id="output"></div>
+
+        
+        <script>
+        
+        var priceInput = document.getElementById('txt-price'); //fetches the input on the price button and assigns it to a variable
+        var quantityInput = document.getElementById('txt-quantity'); //fetches the input on the quantity button and assigns it to a variable
+        var submitBtn = document.getElementById('btn-submit'); //boolean variable that will store whether the calculate button is pressed or not
+        var output = document.getElementById('output'); //holds the output
+
+        submitBtn.addEventListener('click', function () { //once the button is clickec
+            var price = priceInput.value;                  //get the price value from the input
+            var quanity = quantityInput.value;              //get the quantity from the input
+            price = +price;                             
+            quanity = +quanity;
+            if (Number.isNaN(price) || Number.isNaN(quanity)) {  //if the inputs are invalid, do nothing
+            output.innerHTML = 'Invalid input';
+            return;
+            }
+            var totalPrice = price * quanity;    //the total price that will be output is calculated by multiplying the price times quantity
+            totalPrice = Math.round(totalPrice * 100) / 100; //rounding out the final price to 2 sig digits
+            output.innerHTML = quanity + ' items at $' + price + ' each is $' + totalPrice; //outputs the string that tells you the order total
+        });
+        </script>
+    </body>
+</html>
