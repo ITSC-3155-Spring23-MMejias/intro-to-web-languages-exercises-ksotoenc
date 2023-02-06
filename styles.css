@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: greenyellow;
+  }
+  
+  #main-title {
+    text-align: center;
+    font-size: 69;
+    font-weight: bold;
+  }
+  
+  .content {
+    margin-bottom: 12px;
+  }
